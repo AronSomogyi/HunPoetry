@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-import sys
 import re
 import nltk
 #import itertools
@@ -42,4 +41,4 @@ df['poem'] = df['poem'].apply(lambda x: [word for word in x.split() if word not 
 df['poem'] = df['poem'].apply(lambda x: [re.sub(r'[^\w\s]', '', wrds) for wrds in x])
 
 
-
+df.to_csv('df_preprocessed.csv')
