@@ -1,8 +1,6 @@
 import pandas as pd
 import os
 import re
-import nltk
-#import itertools
 
 # Define the source directorysource_dir = "poem_texts"  # Change this to your source path
 source_dir = 'poem_texts/'

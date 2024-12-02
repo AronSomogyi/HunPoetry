@@ -1,0 +1,19 @@
+{
+  "labels":[
+    "Ady",
+    "AranyJ",
+    "Babits",
+    "Balassi",
+    "Csokonai",
+    "Jozsef",
+    "Karinthy",
+    "Kolcsey",
+    "Kosztolanyi",
+    "Madach",
+    "Petofi",
+    "Radnoti",
+    "Vorosmarty"
+  ],
+  "threshold":0.0,
+  "positive_label":null
+}
