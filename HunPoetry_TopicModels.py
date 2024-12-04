@@ -66,11 +66,6 @@ if False:
     nlp.disable_pipes("tagger", "parser", "ner")
     embeddings = np.array([doc.vector for doc in tqdm(nlp.pipe(docs, batch_size=50))])
     np.save("embeddings.npy", embeddings)
-embeddings = np.load('embeddings.npy')
-
-umap_model1 = UMAP(n_components=5, n_neighbors=15, min_dist=0.02, random_state= 42)
-reduced_embeddings = umap_model1.fit_transform(embeddings)
-
 
 from bertopic import BERTopic
 from bertopic.vectorizers import ClassTfidfTransformer
@@ -79,6 +74,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 from bertopic.backend import BaseEmbedder
 from bertopic.dimensionality import BaseDimensionalityReduction
 from hdbscan import HDBSCAN
+
+embeddings = np.load('embeddings.npy')
+umap_model1 = UMAP(n_components=5, n_neighbors=15, min_dist=0.02, random_state= 42)
+reduced_embeddings = umap_model1.fit_transform(embeddings)
+
 
 hdbscan_model = HDBSCAN(min_cluster_size=70, min_samples= 8, metric='euclidean', cluster_selection_method='eom', prediction_data=True)
 
